@@ -1,6 +1,6 @@
 *.pyc
 *.egg-info
 db.sqlite3
-venv/
-node_modules/
-static/
+/venv/
+/node_modules/
+/static/

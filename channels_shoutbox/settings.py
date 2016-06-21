@@ -144,8 +144,8 @@ PIPELINE = {
     'STYLESHEETS': {
         'bundle': {
             'source_filenames': (
-                'vendor/basscss/css/basscss.min.css',
                 'vendor/basscss-forms/index.css',
+                'vendor/basscss/css/basscss.min.css',
                 'vendor/basscss-btn/css/btn.css',
                 'vendor/basscss-btn-primary/css/btn-primary.css',
                 'vendor/basscss-colors/css/colors.css',
@@ -159,6 +159,7 @@ PIPELINE = {
     'JAVASCRIPT': {
         'bundle': {
             'source_filenames': (
+                'vendor/blissfuljs/bliss.min.js',
                 'app.js',
             ),
             'output_filename': 'bundle.js',

@@ -5,7 +5,6 @@
   <head>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
     {% stylesheet 'bundle' %}
-    {% javascript 'bundle' %}
   <body class="p3">
     <main class="flex flex-wrap border border-teal">
       <header class="bg-teal white px2 col-12">
@@ -23,13 +22,19 @@
         <div class="shoutbox">
           <h2 class="bg-teal white m0 px2">Shoutbox</h2>
           <ul class="messages list-reset m0">
-            <li class="border-bottom border-silver p2">
-              <strong>marksteve</strong>: Hello guys
+          {% for message in messages %}
+            <li class="border-bottom border-silver p2" title="{{ message.sent_at|date:'r' }}">
+              <strong>{{ message.name }}</strong>:
+              {{ message.text }}
             </li>
+          {% endfor %}
           </ul>
-          <form class="p2" action="">
-            <input class="input border-box" type="text" placeholder="Message">
+          <form class="p2 flex">
+            <input class="input border-box m0 mr1 col-4" type="text" name="name" placeholder="Name">
+            <input class="input border-box m0 mr1 col-8" type="text" name="text" placeholder="Message">
             <button class="btn btn-primary bg-teal">Submit</button>
           </form>
         </div>
       </section>
+    </main>
+    {% javascript 'bundle' %}
