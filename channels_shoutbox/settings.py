@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'channels',
+    'pipeline',
+    'app',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -120,6 +122,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+STATICFILES_FINDERS = (
+    'pipeline.finders.FileSystemFinder',
+    'pipeline.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+)
+STATICFILES_DIRS = [
+    ('vendor', 'node_modules'),
+]
 
 CHANNEL_LAYERS = {
     'default': {
@@ -128,3 +140,28 @@ CHANNEL_LAYERS = {
     },
 }
 
+PIPELINE = {
+    'STYLESHEETS': {
+        'bundle': {
+            'source_filenames': (
+                'vendor/basscss/css/basscss.min.css',
+                'vendor/basscss-forms/index.css',
+                'vendor/basscss-btn/css/btn.css',
+                'vendor/basscss-btn-primary/css/btn-primary.css',
+                'vendor/basscss-colors/css/colors.css',
+                'vendor/basscss-background-colors/css/background-colors.css',
+                'vendor/basscss-border-colors/css/border-colors.css',
+                'app.css',
+            ),
+            'output_filename': 'bundle.css',
+        },
+    },
+    'JAVASCRIPT': {
+        'bundle': {
+            'source_filenames': (
+                'app.js',
+            ),
+            'output_filename': 'bundle.js',
+        },
+    },
+}

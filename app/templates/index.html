@@ -1,0 +1,35 @@
+{% load pipeline %}
+{% load staticfiles %}
+<!doctype html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
+    {% stylesheet 'bundle' %}
+    {% javascript 'bundle' %}
+  <body class="p3">
+    <main class="flex flex-wrap border border-teal">
+      <header class="bg-teal white px2 col-12">
+        <h1 class="m0">Welcome to my site</h1>
+      </header>
+      <section class="col-8 border-box p2">
+        <img src="{% static 'underconstruction.gif' %}" class="align-middle">
+        Under Construction
+      </section>
+      <section class="col-4 border-box border-left border-teal">
+        <div class="p2">
+          <img src="{% static 'underconstruction.gif' %}" class="align-middle">
+          Under Construction
+        </div>
+        <div class="shoutbox">
+          <h2 class="bg-teal white m0 px2">Shoutbox</h2>
+          <ul class="messages list-reset m0">
+            <li class="border-bottom border-silver p2">
+              <strong>marksteve</strong>: Hello guys
+            </li>
+          </ul>
+          <form class="p2" action="">
+            <input class="input border-box" type="text" placeholder="Message">
+            <button class="btn btn-primary bg-teal">Submit</button>
+          </form>
+        </div>
+      </section>

@@ -6,6 +6,7 @@ if __name__ == '__main__':
         description='Shoutbox demo of Django Channels',
         install_requires=[
             'django<1.10',
+            'django-pipeline',
             'channels',
         ],
     )
