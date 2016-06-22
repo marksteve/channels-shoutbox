@@ -9,6 +9,8 @@
     "basscss-btn-primary": "^1.1.0",
     "basscss-colors": "^2.2.0",
     "basscss-forms": "^1.0.0",
-    "blissfuljs": "^1.0.2"
+    "blissfuljs": "^1.0.2",
+    "color-hash": "^1.0.3",
+    "onmount": "^1.2.1"
   }
 }

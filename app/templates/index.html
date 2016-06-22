@@ -23,8 +23,8 @@
           <h2 class="bg-teal white m0 px2">Shoutbox</h2>
           <ul class="messages list-reset m0">
           {% for message in messages %}
-            <li class="border-bottom border-silver p2" title="{{ message.sent_at|date:'r' }}">
-              <strong>{{ message.name }}</strong>:
+            <li class="message border-bottom border-silver p2" title="{{ message.sent_at|date:'r' }}">
+              <strong>{{ message.name }}</strong>
               {{ message.text }}
             </li>
           {% endfor %}

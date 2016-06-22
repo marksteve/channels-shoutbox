@@ -160,6 +160,8 @@ PIPELINE = {
         'bundle': {
             'source_filenames': (
                 'vendor/blissfuljs/bliss.min.js',
+                'vendor/onmount/index.js',
+                'vendor/color-hash/dist/color-hash.js',
                 'app.js',
             ),
             'output_filename': 'bundle.js',
