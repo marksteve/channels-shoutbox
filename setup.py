@@ -7,6 +7,8 @@ if __name__ == '__main__':
         install_requires=[
             'django<1.10',
             'django-pipeline',
+            'psycopg2',
+            'dj-database-url',
             'channels',
         ],
     )
